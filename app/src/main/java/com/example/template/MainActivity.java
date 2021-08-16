@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         initOCL();
         // Example of a call to a native method
-        TextView tv = binding.sampleText;
+        TextView tv = findViewById(R.id.sample_text);
+        tv.setText(helloWorldFromOCL());
     }
     @Override
     public void onPause() {
@@ -42,5 +43,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public native void initOCL();
     public native void closeOCL();
+    public native String helloWorldFromOCL();
 
 }
